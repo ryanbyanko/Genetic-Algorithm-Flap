@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="ai.js"></script>
+    <script src="bird.js"></script>
+  </head>
+  <body>
+      <canvas id="canvas" style="border:1px solid black"></canvas>
+    <br />
+    <button onclick="killAll=true">Kill All</button>
+    <p>Generation: <span id="gen">0</span></p>
+    <p>Score: <span id="score">0</span></p>
+    <p>HighScore: <span id="high-score">0</span></p>
+    <!-- <p>Performance: <span id="performance">0</span></p> -->
+
+    <form onchange="updateValues()">
+        <label for="speed">Speed: <span id="speed-val">1</span></label><input type="range" min="0.1" max="8" step="0.1" id="speed" value="1" />
+        <label for="maxMutationChance">Maximum mutation chance: <span id="maxMutationChance-val">0.4</span></label><input type="range" min="0.01" max="1" step="0.01" id="maxMutationChance" value="0.4" />
+        <label for="idealPercent">Reproducing fraction: <span id="idealPercent-val">0.5</span></label><input type="range" min="0.1" max="0.5" step="0.1" id="idealPercent" value="0.4" />
+        <label for="population">Population: <span id="population-val">30</span></label><input type="range" min="5" max="150" step="5" id="population" value="30" />
+        <label for="gap">Pipe gap: <span id="gap-val">110</span></label><input type="range" min="50" max="150" step="2" id="gap" value="110" />
+        <label for="between">Distance between: <span id="between-val">190</span></label><input type="range" min="100" max="400" step="5" id="between" value="190" />
+        <label for="gravity">Gravity: <span id="gravity-val">0.25</span></label><input type="range" min="0.01" max="1" step="0.01" id="gravity" value="0.25" />
+        <label for="width">Width: <span id="width-val">400</span></label><input type="range" min="300" max="800" step="5" id="width" value="400" />
+        <label for="height">Height: <span id="height-val">350</span></label><input type="range" min="250" max="800" step="5" id="height" value="350" />
+    </form>
+
+    <pre id="bestBrain"></pre>
+
+    <script src="script.js"></script>
+  </body>
+</html>
